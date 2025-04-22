@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(145deg, rgb(212, 143, 15), rgb(171, 63, 171), rgb(50, 50, 158));
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+    padding: 10px;
+}
+
+.div1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    padding: 10px;
+}
+
+input{
+    
+    padding: 10px;
+}
+
+input:focus{
+    outline: none;
+}
+
+li{
+    font-size: 20px;
+    height: 50px;
+    text-transform: capitalize;
+}
+
+ol{
+    padding: 16px;
+    margin: 16px;
+    position: relative;
+}
+
+.dltBtn{
+    position: absolute;
+    right: 20px;
+    width: 70px;
+    border-radius: 20px;
+    border: none;
+}
+
+.editBtn{
+    position: absolute;
+    right: 100px;
+    width: 70px;
+    border-radius: 20px;
+    border: none;
+}
+
