@@ -92,4 +92,8 @@ ol{
     #input{
         width: 200px !important;
     }
+
+    #input2{
+        width: 10px !important;
+    }
 }

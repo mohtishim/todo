@@ -72,12 +72,13 @@ var allEditBtns = document.getElementsByClassName('editBtn');
 function edit(b){
     b.parentElement.firstChild.nodeValue = "";
     b.parentElement.appendChild(inputField);
+    inputField.setAttribute('id','input2')
     var okText = document.createTextNode('Ok');
     okElement.setAttribute('onclick','okk(this)');
     okElement.setAttribute('class','okBtn')
     okElement.appendChild(okText);
     b.parentElement.appendChild(okElement); 
-   
+    
     for (var i = 0; i < allEditBtns.length; i++) {
         allEditBtns[i].disabled = true;
     }
