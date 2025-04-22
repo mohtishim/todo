@@ -14,48 +14,39 @@ function counting(){
     }
 }
 
-
-
 // To Do App
 
-
-    
-    var inputElement = document.getElementById('input');
-    var olDiv = document.getElementById('list');
-    var editbtnElement;
+var inputElement = document.getElementById('input');
+var olDiv = document.getElementById('list');
+var editbtnElement;
 
 function save(){
     if(inputElement.value === ""){
         alert("Please Enter To Do list");
     }
     else{
-       
-    var listElement= document.createElement('li');
-    var listText = document.createTextNode(inputElement.value);
-    listElement.appendChild(listText);
+        var listElement= document.createElement('li');
+        var listText = document.createTextNode(inputElement.value);
+        listElement.appendChild(listText);
 
-    var deletebtnElement = document.createElement('button');
-    var deletebtnText = document.createTextNode('Delete');
-    deletebtnElement.setAttribute('class','dltBtn');
-    deletebtnElement.setAttribute('onclick','deleteItem(this)');
-    deletebtnElement.appendChild(deletebtnText);
-    listElement.appendChild(deletebtnElement)
+        var deletebtnElement = document.createElement('button');
+        var deletebtnText = document.createTextNode('Delete');
+        deletebtnElement.setAttribute('class','dltBtn');
+        deletebtnElement.setAttribute('onclick','deleteItem(this)');
+        deletebtnElement.appendChild(deletebtnText);
+        listElement.appendChild(deletebtnElement)
 
-    editbtnElement = document.createElement('button');
-    var editbtnText = document.createTextNode('Edit');
-    editbtnElement.setAttribute('class','editBtn');
-    editbtnElement.setAttribute('onclick','edit(this)');
-    editbtnElement.appendChild(editbtnText);
-    listElement.appendChild(editbtnElement);
+        editbtnElement = document.createElement('button');
+        var editbtnText = document.createTextNode('Edit');
+        editbtnElement.setAttribute('class','editBtn');
+        editbtnElement.setAttribute('onclick','edit(this)');
+        editbtnElement.appendChild(editbtnText);
+        listElement.appendChild(editbtnElement);
 
-
-    olDiv.prepend(listElement);
-    inputElement.value = ""
+        olDiv.prepend(listElement);
+        inputElement.value = ""
     }
-
-
 }
-
 
 function clearAll(){
     olDiv.innerHTML = "";
@@ -65,37 +56,39 @@ function deleteItem(a){
     a.parentElement.remove();
 }
 
-var inputField = document.createElement('input');
-var okElement = document.createElement('button');
-var allEditBtns = document.getElementsByClassName('editBtn');
-
 function edit(b){
-    b.parentElement.firstChild.nodeValue = "";
-    b.parentElement.appendChild(inputField);
-    inputField.setAttribute('id','input2')
+    var inputField = document.createElement('input');
+    inputField.setAttribute('id','input2');
+
+    var okElement = document.createElement('button');
     var okText = document.createTextNode('Ok');
     okElement.setAttribute('onclick','okk(this)');
-    okElement.setAttribute('class','okBtn')
+    okElement.setAttribute('class','okBtn');
     okElement.appendChild(okText);
+
+    b.parentElement.firstChild.nodeValue = "";
+    b.parentElement.appendChild(inputField);
     b.parentElement.appendChild(okElement); 
-    
+
+    var allEditBtns = document.getElementsByClassName('editBtn');
     for (var i = 0; i < allEditBtns.length; i++) {
         allEditBtns[i].disabled = true;
     }
 }
 
 function okk(c){
-    if(inputField.value === ""){
+    var input = c.previousSibling;
+    if(input.value === ""){
         alert("Please Enter To Do list");
     }
     else{
-    c.parentElement.firstChild.nodeValue = inputField.value;
-    inputField.remove();
-    okElement.remove();
-    
-    for (var i = 0; i < allEditBtns.length; i++) {
-        allEditBtns[i].disabled = false;
+        c.parentElement.firstChild.nodeValue = input.value;
+        input.remove();
+        c.remove();
+
+        var allEditBtns = document.getElementsByClassName('editBtn');
+        for (var i = 0; i < allEditBtns.length; i++) {
+            allEditBtns[i].disabled = false;
+        }
     }
-    }
-    
 }
