@@ -74,6 +74,7 @@ function edit(b){
     b.parentElement.appendChild(inputField);
     var okText = document.createTextNode('Ok');
     okElement.setAttribute('onclick','okk(this)');
+    okElement.setAttribute('class','okBtn')
     okElement.appendChild(okText);
     b.parentElement.appendChild(okElement); 
    

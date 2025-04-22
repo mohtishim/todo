@@ -21,13 +21,20 @@ h1{
     align-items: center;
 }
 
-button{
+.divInside>button{
     padding: 10px;
+    width: 70px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(156, 212, 134);
+    box-shadow: 2px 2px 2px rgb(74, 44, 194);
 }
 
 input{
-    
-    padding: 10px;
+    margin-right: 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
 }
 
 input:focus{
@@ -47,18 +54,42 @@ ol{
 }
 
 .dltBtn{
+    padding: 10px;
     position: absolute;
     right: 20px;
     width: 70px;
     border-radius: 20px;
     border: none;
+    background-color: rgb(209, 212, 134);
+    box-shadow: 2px 2px 2px rgb(74, 44, 194);
 }
 
 .editBtn{
+    padding: 10px;
     position: absolute;
     right: 100px;
     width: 70px;
     border-radius: 20px;
     border: none;
+    background-color: rgb(209, 212, 134);
+    box-shadow: 2px 2px 2px rgb(74, 44, 194);
 }
 
+.okBtn{
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    width: 50px;
+    background-color: rgb(209, 212, 134);
+    box-shadow: 2px 2px 2px rgb(74, 44, 194);
+}
+
+@media (max-width: 460px) {
+    .div1{
+        flex-direction: column;
+        gap: 10px;
+    }
+    #input{
+        width: 200px !important;
+    }
+}
